@@ -7,7 +7,9 @@ const app = express();
 app.use(express.json());
 
 const studentRoutes = require('./route/route');
-app.use('/student', studentRoutes);
+app.use('/student', (req,res)=>{
+    res.send('Welcome to Student API');
+});
 
 
 app.listen(5000, () => {
